@@ -2,13 +2,30 @@
 
 Lightweight JavaScript utility to collect **mobile money via Lenco** from **React Native** apps.
 
-> ⚠️ **Security**: Always store your Lenco **secret key** in environment variables (e.g., `.env` files) and never hardcode it directly in your code.
+> ⚠️ **Security**: Always store your Lenco **secret key** in environment variables (e.g., `.env` files) and never hardcode it directly in your code.  
+> 📝 **Note**: You must [create a Lenco account](https://lenco.co/zm) to obtain your **API key** before using this package.
 
 ## Install
 
 ```bash
 npm i lenco-mobile-money-react-native
 ```
+
+## Environment Variables
+
+This library requires a **Lenco secret key**. Copy the example file and update it:
+
+```bash
+cp .env.example .env
+```
+
+Edit your `.env` file and replace values with your own credentials from Lenco:
+
+```bash
+EXPO_PUBLIC_LENCO_SEC_KEY=your-lenco-secret-key
+```
+
+⚠️ Do **not** commit `.env` to source control. Only `.env.example` should be shared.
 
 ## Quick Start
 
