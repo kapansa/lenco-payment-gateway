@@ -1,4 +1,3 @@
-````md
 # lenco-mobile-money
 
 Lightweight JavaScript utility to collect **mobile money via Lenco** from **React Native** apps.
@@ -10,7 +9,6 @@ Lightweight JavaScript utility to collect **mobile money via Lenco** from **Reac
 ```bash
 npm i lenco-mobile-money
 ```
-````
 
 ## Quick Start
 
