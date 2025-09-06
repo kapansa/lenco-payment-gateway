@@ -7,7 +7,7 @@ Lightweight JavaScript utility to collect **mobile money via Lenco** from **Reac
 ## Install
 
 ```bash
-npm i lenco-mobile-money
+npm i lenco-mobile-money-react-native
 ```
 
 ## Quick Start
