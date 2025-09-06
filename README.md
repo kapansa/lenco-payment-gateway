@@ -1,4 +1,4 @@
-# lenco-mobile-money
+# Lenco Payment Gateway
 
 Lightweight JavaScript utility to collect **mobile money via Lenco** from **React Native** apps.
 
