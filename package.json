@@ -1,0 +1,23 @@
+{
+  "name": "lenco-payment-gateway",
+  "version": "1.0.0",
+  "description": "Lightweight JS utility to collect mobile money via Lenco in React Native apps",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "keywords": [
+    "lenco",
+    "mobile-money",
+    "react-native",
+    "payments",
+    "mtn",
+    "airtel",
+    "zamtel"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "react-native-uuid": "^2.0.1"
+  }
+}
