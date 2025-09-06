@@ -76,8 +76,33 @@ if (result.success) {
   success: boolean,
   status: "pending" | "successful" | "failed" | "otp-required" | "pay-offline",
   reference: string,
-  data?: any,
-  error?: string // e.g. 'timeout'
+  data?: {
+    id: string,
+    initiatedAt: string, // ISO date-time
+    completedAt: string | null, // ISO date-time or null
+    amount: string,
+    fee: string | null,
+    bearer: "merchant" | "customer",
+    currency: string,
+    reference: string,
+    lencoReference: string,
+    type: "mobile-money",
+    status: "pending" | "successful" | "failed" | "otp-required" | "pay-offline",
+    source: "api",
+    reasonForFailure: string | null,
+    settlementStatus: "pending" | "settled" | null,
+    settlement: null,
+    mobileMoneyDetails: {
+      country: string,
+      phone: string,
+      operator: string,
+      accountName: string | null,
+      operatorTransactionId: string | null,
+    } | null,
+    bankAccountDetails: null,
+    cardDetails: null,
+  },
+  error?: string // e.g. "timeout"
 }
 ```
 
