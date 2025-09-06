@@ -1,6 +1,6 @@
 {
   "name": "lenco-payment-gateway",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight JS utility to collect mobile money via Lenco in React Native apps",
   "type": "module",
   "main": "src/index.js",
