@@ -1,8 +1,8 @@
-# Lenco Payment Gateway
+# Lenco Mobile Money For React Native Apps
 
 Lightweight JavaScript utility to collect **mobile money via Lenco** from **React Native** apps.
 
-> ⚠️ **Security**: For production, **do not** embed your Lenco **secret** key in the app. Put it on your backend and proxy requests. This library supports direct calls for prototyping/dev.
+> ⚠️ **Security**: Always store your Lenco **secret key** in environment variables (e.g., `.env` files) and never hardcode it directly in your code.
 
 ## Install
 
@@ -16,7 +16,7 @@ npm i lenco-mobile-money
 import { processMobileMoneyPayment } from "lenco-mobile-money";
 
 const result = await processMobileMoneyPayment({
-  apiKey: "<LENCO_SECRET>", // Prefer: call your own backend instead
+  apiKey: process.env.EXPO_PUBLIC_LENCO_SEC_KEY, // stored in .env
   provider: "mtn", // "mtn" | "airtel" | "zamtel"
   phone: "2609XXXXXXXX",
   amount: 50,
@@ -44,7 +44,7 @@ if (result.success) {
 - `amount`: number
 - `bearer`: `"merchant"` (default) or `"customer"`
 - `country`: default `"zm"`
-- `apiKey`: Lenco secret (recommended: use your backend instead)
+- `apiKey`: Lenco secret key (use environment variable)
 - `reference`: optional custom reference (defaults to `uuid.v4()`)
 - `pollInterval`: ms between status checks (default `3000`)
 - `maxAttempts`: default `40`
@@ -89,16 +89,10 @@ processMobileMoneyPayment({ /* ... */, signal: controller.signal });
 /* later */ controller.abort();
 ```
 
-## Production Architecture
+## Security Best Practice
 
-- **Recommended**: Your app calls **your backend**.
-- Backend stores **Lenco secret** and hits:
-
-  - `POST /collections/mobile-money`
-  - `POST /collections/mobile-money/submit-otp`
-  - `GET /collections/status/:reference`
-
-- Your app never handles secrets directly.
+- Store your Lenco secret key in environment variables (e.g., `.env`, `app.config.js`, or `process.env` in Expo).
+- Never commit or expose your secret key in public repos.
 
 ## License
 

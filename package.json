@@ -1,5 +1,5 @@
 {
-  "name": "lenco-payment-gateway",
+  "name": "lenco-mobile-money-react-native",
   "version": "1.0.1",
   "description": "Lightweight JS utility to collect mobile money via Lenco in React Native apps",
   "type": "module",
